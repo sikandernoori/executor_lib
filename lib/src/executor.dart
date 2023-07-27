@@ -52,8 +52,7 @@ class CancellationException implements Exception {
 
 /// Creates a new executor with the given concurrency. Uses
 /// isolates unless in debug mode
-Executor newExecutor({required int concurrency}) =>
-    kDebugMode ? QueueExecutor() : PoolExecutor(concurrency: concurrency);
+Executor newExecutor({required int concurrency}) => QueueExecutor();
 
 /// Thrown when a job is cancellled
 extension CancellationFuture<T> on Future<T> {
